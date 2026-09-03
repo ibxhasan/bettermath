@@ -45,6 +45,12 @@ examples in full. Practice follows every section as a **Your Turn** block, and
 each chapter closes with end-of-chapter questions in Paper 1 and Paper 2 style
 followed by Paper 3 style investigations. Higher Level content is marked.
 
+## Instructor kit (Cursor)
+
+Teaching with Cursor? See **[`instructor-kit/START-HERE.md`](instructor-kit/START-HERE.md)** —
+lesson / Paper 1–2 / IA prompt packs, templates, AA–AI course maps, EN–JA glossary,
+and classroom demos aligned to these chapters.
+
 ## Using these
 
 You may download, print, and use these chapters in your classroom or your own
