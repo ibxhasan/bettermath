@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BetterMath — IB Mathematics AA HL</title>
-<meta name="description" content="HL maths is hard, and that is exactly why it is worth doing. Seventeen chapters of notes, worked examples and practice for IB Mathematics AA HL, by Hasan Khan.">
+<meta name="description" content="Success in HL Math isn't about finding easy paths, but clear ones. Seventeen chapters of notes, worked examples and practice for IB Mathematics AA HL, by Hasan Khan.">
 <meta name="author" content="Hasan Khan">
 <meta property="og:title" content="BetterMath — IB Mathematics AA HL">
 <meta property="og:description" content="Seventeen chapters explaining every point of the IB AA HL syllabus, complete, or chapter by chapter. Intuitive. Clear. Uncompromising.">
@@ -112,9 +112,19 @@
     .num{flex-basis:34px;font-size:22px}
   }
   /* the update date, under the motto. The notes are re-released rather than
-     re-editioned, so the date is the thing a returning reader checks. */
-  .dateline{margin:10px 0 0;font-size:13px;letter-spacing:.06em;
-            text-transform:uppercase;color:var(--ink-run)}
+     re-editioned, so the date is the thing a returning reader checks -- which
+     is why it is a badge and not a grey line: a solid cobalt pill, carrying a
+     dot. The fill gives it weight, the dot says the weight means "new" rather
+     than "important", and the pill shape keeps it from reading as a button. */
+  .dateline{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;
+            background:var(--cobalt);color:#fff;padding:5px 14px 5px 11px;
+            border-radius:99px;font-size:12.5px;font-weight:700;
+            letter-spacing:.1em;text-transform:uppercase}
+  /* the dot is the only thing on the page that says "this changed". White,
+     not scarlet: scarlet on cobalt is two dark colours fighting, and the dot
+     is 7px -- it has to win on contrast or it reads as a printing fault. */
+  .dateline::before{content:'';width:7px;height:7px;border-radius:50%;
+                    background:#fff}
 </style>
 </head>
 <body>
@@ -145,10 +155,11 @@
   </header>
 
   <main>
-    <p class="lede"><strong>HL maths is challenging, and that is exactly why it is worth doing.</strong></p>
+    <p class="lede"><strong>Success in HL Math isn't about finding easy paths, but clear ones.</strong></p>
 
-    <p>These notes will not make it easy, and nothing honest could. What it can do is make it clear.</p>
+    <p>These notes skip shortcuts and artificial simplifications to focus on genuine clarity.</p>
 
+    <p>Mastering AA HL naturally takes dedication and practice. This guide is here to support your effort, helping you focus entirely on the math without unnecessary hurdles.</p>
 
     <p class="tagline">Intuitive. Clear. Uncompromising.</p>
 
@@ -160,14 +171,6 @@
         <span class="book-sub">All seventeen chapters, answers at the end &middot; 602 pages &middot; 2.4 MB &middot; Updated September 2026</span>
       </div>
       <a class="get big" href="pdf/bettermath-aa-hl-with-answers.pdf">Download the notes</a>
-    </div>
-
-    <div class="book">
-      <div class="book-meta">
-        <span class="book-title">The same notes, without the answers</span>
-        <span class="book-sub">574 pages &middot; 2.2 MB &middot; Updated September 2026</span>
-      </div>
-      <a class="get big" href="pdf/bettermath-aa-hl.pdf">Download that instead</a>
     </div>
 
     <h2>Chapters</h2>
@@ -329,7 +332,7 @@
 
     <h2>What is in a chapter</h2>
 
-    <p>Each chapter opens with a problem worth solving, then builds the topic in order. Definitions and formulas from the IB formula booklet are marked. Worked examples are numbered and complete. After every section there is a <strong>Your Turn</strong> block of practice on that section alone, and the chapter ends with end-of-chapter questions in Paper 1 and Paper 2 style, followed by Paper 3 style investigations.</p>
+    <p>Each chapter builds the topic sequentially, focusing on intuition and deep understanding. Definitions and formulas from the IB formula booklet are clearly marked, followed by fully worked examples. Every section ends with a <strong>Your Turn</strong> practice block for targeted review, and chapters conclude with Paper 1 and Paper 2 style questions&mdash;plus challenge problems for those who want to push further.</p>
 
     <p>Higher Level content is marked, so a Standard Level reader can see what to skip.</p>
 
@@ -401,7 +404,7 @@
 
     <h2>Using these</h2>
 
-    <p class="note">You may download these chapters, print them, and use them in your classroom or your own study. Please keep the author's name on them. They may not be sold or used commercially. Released under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+    <p class="note">These notes are free to read and download for your own study. For anything else &mdash; printing sets for a class, sharing copies, posting them elsewhere, translating them, or any commercial use &mdash; please <a href="mailto:ibxhasan@gmail.com?subject=BetterMath%20%E2%80%94%20permission%20request">write to me first</a>. I usually say yes, and I like knowing where they end up.<br>&copy; 2026 Hasan Khan. All rights reserved.</p>
 
     <p>If you find a mistake, or a passage that is hard to follow, corrections are genuinely welcome.</p>
 
@@ -409,7 +412,7 @@
   </main>
 
   <footer>
-    <p>BetterMath · Hasan Khan · updated September 2026 · licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
+    <p>BetterMath · Hasan Khan · updated September 2026 · &copy; 2026 · all rights reserved</p>
     <p>Not affiliated with or endorsed by the International Baccalaureate Organization.</p>
   </footer>
 </div>
