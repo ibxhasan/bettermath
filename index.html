@@ -3,46 +3,373 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BetterMath has moved to bettermath.org</title>
-<meta name="description" content="BetterMath, notes for IB Mathematics AA HL by Hasan Khan, now lives at www.bettermath.org.">
+<title>BetterMath — IB Mathematics AA HL notes</title>
+<meta name="description" content="Free, complete notes for IB Mathematics: Analysis and Approaches Higher Level. Seventeen chapters, worked examples and exam-style practice, by Hasan Khan.">
+<meta name="author" content="Hasan Khan">
+<meta property="og:title" content="BetterMath — IB Mathematics AA HL notes">
+<meta property="og:description" content="Free, complete notes for IB Mathematics: Analysis and Approaches Higher Level. Seventeen chapters, worked examples and exam-style practice, by Hasan Khan.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.bettermath.org/img/og-card.jpg">
 <link rel="canonical" href="https://www.bettermath.org/">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="10; url=https://www.bettermath.org/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231A47B8'/%3E%3Cpath d='M13 9.5 L20 16 L13 22.5' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
 <style>
-  :root{--cobalt:#1A47B8;--ink:#141414;--run:#6b6b6b;--scarlet:#C44545}
-  *{box-sizing:border-box}
-  a{color:var(--cobalt)}
-  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px 16px;
-       background:linear-gradient(180deg,#fff 0%,#F3F6FD 60%,#DCE5F8 100%);color:var(--ink);
-       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6}
-  main{max-width:560px;width:100%;background:#fff;border:1px solid #D6DEF3;border-radius:12px;
-       padding:40px 36px;box-shadow:0 24px 60px -30px rgba(20,40,110,.4)}
-  .logo{display:flex;align-items:center;gap:10px;color:var(--cobalt);font-family:"Palatino Linotype",Palatino,Georgia,serif;
-        font-weight:700;font-size:22px;margin-bottom:26px}
-  .logo svg{width:30px;height:30px}
-  h1{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:clamp(28px,6vw,36px);line-height:1.15;margin:0 0 16px}
-  p{margin:0 0 14px;font-size:17px}
-  .thanks{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:18px;color:#262626;
-          border-left:4px solid var(--cobalt);padding:2px 0 2px 14px;margin:0 0 20px}
-  a.go{display:inline-block;margin:10px 0 18px;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700;
-       padding:13px 22px;border-radius:6px;box-shadow:0 6px 16px -6px rgba(26,71,184,.55)}
-  a.go:hover{background:#143A99}
-  .small{font-size:14px;color:var(--run)}
-  .motto{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cobalt);letter-spacing:.06em;font-size:15px;margin-top:22px}
-  .motto b{color:var(--scarlet);font-weight:400}
+:root{
+  --cobalt:#1A47B8; --cobalt-d:#143A99; --scarlet:#C44545; --teal:#287C78;
+  --ink:#141414; --ink-cap:#262626; --ink-strong:#404040; --ink-run:#737373;
+  --rule:#E3E3E3; --band:#F5F6FA; --tint:#EEF2FB; --tint2:#F6F8FD;
+  --serif:"Palatino Linotype",Palatino,"Book Antiqua","Source Serif 4",Georgia,serif;
+  --sans:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wide:1080px; --text:680px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--cobalt)} a:hover{text-decoration-thickness:2px}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:var(--wide);margin:0 auto;padding:0 20px}
+.narrow{max-width:var(--text)}
+p{margin:0 0 16px}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:2px}
+
+/* ── top bar ── */
+.bar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(8px);-webkit-backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cobalt);font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px;flex:0 0 auto}
+.bar nav{margin-left:auto;display:flex;gap:22px;font-size:15px;font-weight:600}
+.bar nav a{color:var(--ink-strong);text-decoration:none}
+.bar nav a:hover{color:var(--cobalt)}
+.bar .level{font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--ink-strong)}
+@media (max-width:760px){.bar nav{display:none}.bar .level{margin-left:auto}}
+
+/* ── hero ── */
+.hero{background:linear-gradient(180deg,#fff 0%,#F3F6FD 55%,#DCE5F8 100%);position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
+.hero::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cg fill='none' stroke='%231A47B8' stroke-opacity='.10' stroke-width='1'%3E%3Cpath d='M0 0L56 97M56 0L0 97M0 48.5H56'/%3E%3Cpath d='M28 0L56 48.5L28 97L0 48.5Z'/%3E%3C/g%3E%3C/svg%3E");background-size:56px 97px;opacity:.9;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:64px;padding-bottom:72px}
+.kicker{font-family:var(--serif);font-variant:small-caps;letter-spacing:.08em;font-size:17px;color:var(--ink-cap);margin:0 0 8px;font-weight:700}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(46px,7vw,76px);line-height:1;margin:0;color:var(--ink);letter-spacing:-.015em}
+.hero .sub{font-family:var(--serif);font-weight:700;color:var(--cobalt);font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin:10px 0 16px}
+.chip{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:2px}
+.chip.hl{background:var(--teal);color:#fff}
+.lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--ink-cap);margin:22px 0 26px;max-width:34ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;font:inherit;font-weight:700;font-size:16px;text-decoration:none;border-radius:6px;padding:13px 20px;cursor:pointer;border:0;transition:background .15s,box-shadow .15s,color .15s}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.btn.primary{background:var(--cobalt);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.08),0 6px 16px -6px rgba(26,71,184,.55)}
+.btn.primary:hover{background:var(--cobalt-d)}
+.btn.ghost{background:#fff;color:var(--cobalt);box-shadow:inset 0 0 0 1.5px var(--cobalt)}
+.btn.ghost:hover{background:var(--tint)}
+.btn.small{font-size:14px;padding:8px 13px;border-radius:5px}
+.meta{font-size:14px;color:var(--ink-run);margin-top:14px}
+.motto{display:flex;align-items:center;gap:16px;margin-top:34px;max-width:420px}
+.motto::before{content:"";flex:0 0 56px;height:1px;background:var(--scarlet)}
+.motto span{font-family:var(--mono);font-size:17px;letter-spacing:.06em;color:var(--cobalt)}
+.motto b{color:var(--scarlet);font-weight:400}
+.coverbox{justify-self:center;position:relative;width:min(360px,100%)}
+.coverbox img{border-radius:3px 6px 6px 3px;box-shadow:0 1px 2px rgba(0,0,0,.12),0 18px 40px -12px rgba(20,40,110,.45),0 40px 80px -30px rgba(20,40,110,.35);transform:perspective(1400px) rotateY(-5deg);transform-origin:left center}
+.coverbox::after{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(255,255,255,.12) 40%,rgba(0,0,0,0));border-radius:3px 0 0 3px;transform:perspective(1400px) rotateY(-5deg);transform-origin:left center;pointer-events:none}
+.edition{position:absolute;right:-10px;top:18px;background:var(--scarlet);color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 11px;border-radius:3px;box-shadow:0 6px 14px -6px rgba(196,69,69,.7)}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;padding-top:40px;padding-bottom:52px}
+  .coverbox{width:min(250px,70%);order:-1}
+  .coverbox img,.coverbox::after{transform:none}
+  .edition{right:-14px}
+}
+
+/* ── stats ── */
+.stats{border-bottom:1px solid var(--rule);background:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:22px 10px;text-align:center;border-left:1px solid var(--rule)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-family:var(--serif);font-size:32px;line-height:1.1;color:var(--cobalt)}
+.stat span{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-run);font-weight:600}
+@media (max-width:560px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* ── sections ── */
+section{padding:72px 0 8px;scroll-margin-top:60px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);margin:0 0 8px}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.4vw,36px);line-height:1.15;letter-spacing:-.01em;margin:0 0 14px;color:var(--ink)}
+.intro{font-size:18px;color:var(--ink-strong);max-width:62ch;margin-bottom:28px}
+
+/* the book */
+.bookcard{display:flex;align-items:center;gap:26px;flex-wrap:wrap;border:1px solid #D6DEF3;border-left:5px solid var(--cobalt);background:var(--tint2);border-radius:8px;padding:24px 26px}
+.bookcard .bm{flex:1 1 320px}
+.bookcard .t{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--cobalt);line-height:1.25}
+.bookcard .d{font-size:15px;color:var(--ink-run);margin-top:4px}
+.free{display:inline-block;background:#E4F1EF;color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:3px;margin-bottom:8px}
+
+/* chapters */
+.chgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 36px;margin-top:34px;border-top:1px solid var(--rule)}
+.ch{display:grid;grid-template-columns:52px 1fr auto;gap:4px 14px;align-items:center;padding:17px 0;border-bottom:1px solid var(--rule)}
+.ch .n{font-family:var(--serif);font-weight:700;font-size:30px;color:var(--cobalt);line-height:1;grid-row:span 2}
+.ch .t{font-weight:700;font-size:17.5px;line-height:1.3}
+.ch .s{font-size:13.5px;color:var(--ink-run);grid-column:2}
+.ch .s i{font-style:normal;color:var(--ink-strong);font-weight:600}
+.ch a.dl{grid-row:1 / span 2;grid-column:3;font-size:14px;font-weight:700;text-decoration:none;color:var(--cobalt);border:1.5px solid #C9D4F1;padding:6px 12px;border-radius:5px;white-space:nowrap}
+.ch a.dl:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+@media (max-width:760px){.chgrid{grid-template-columns:1fr}}
+.maplink{margin-top:22px;font-size:16px}
+
+/* resources (gated) */
+.gate{display:grid;grid-template-columns:1fr 1.05fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid #D6DEF3;box-shadow:0 20px 50px -30px rgba(20,40,110,.35)}
+.gate .what{background:var(--cobalt);color:#fff;padding:32px 30px;position:relative}
+.gate .what::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.10' stroke-width='1'%3E%3Cpath d='M0 0L56 97M56 0L0 97M0 48.5H56'/%3E%3Cpath d='M28 0L56 48.5L28 97L0 48.5Z'/%3E%3C/g%3E%3C/svg%3E");background-size:56px 97px;pointer-events:none}
+.gate .what > *{position:relative}
+.gate h3{font-family:var(--serif);font-size:24px;margin:0 0 6px}
+.gate .what p{color:rgba(255,255,255,.85);font-size:15.5px}
+.gate ul{list-style:none;margin:18px 0 0;padding:0}
+.gate li{display:flex;gap:12px;padding:11px 0;border-top:1px solid rgba(255,255,255,.18);font-size:15.5px}
+.gate li svg{flex:0 0 18px;width:18px;height:18px;margin-top:3px;color:#9FB6F2}
+.gate li small{display:block;color:rgba(255,255,255,.7);font-size:13.5px}
+.gate .form{background:#fff;padding:32px 30px}
+@media (max-width:860px){.gate{grid-template-columns:1fr}}
+
+form label{display:block;font-size:14px;font-weight:700;color:var(--ink-strong);margin:0 0 14px}
+form label .opt{font-weight:400;color:var(--ink-run)}
+form input[type=text],form input[type=email],form select,form textarea{display:block;width:100%;margin-top:6px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid #CFCFCF;border-radius:6px;padding:10px 12px}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--cobalt);outline-offset:-1px;border-color:var(--cobalt)}
+form textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+.check{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;color:var(--ink-strong)!important;font-size:14.5px!important}
+.check input{margin-top:4px;width:17px;height:17px;accent-color:var(--cobalt);flex:0 0 auto}
+.fine{font-size:13px;color:var(--ink-run);margin:12px 0 0}
+.err{color:var(--scarlet);font-size:14px;font-weight:600;margin:0 0 10px}
+.hp{position:absolute;left:-9999px}
+
+.unlocked h3{font-family:var(--serif);font-size:24px;margin:0 0 4px;color:var(--ink)}
+.unlocked .grp{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);margin:20px 0 4px}
+.unlocked ul{list-style:none;margin:0;padding:0}
+.unlocked li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.unlocked li .m{flex:1;min-width:0}
+.unlocked li b{display:block;font-size:15.5px}
+.unlocked li small{color:var(--ink-run);font-size:13px}
+.unlocked .again{font-size:13.5px;color:var(--ink-run);margin-top:16px}
+
+/* features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.feat div{border:1px solid var(--rule);border-radius:8px;padding:22px 22px 8px;background:#fff}
+.feat .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--tint);color:var(--cobalt);margin-bottom:12px}
+.feat .ic svg{width:21px;height:21px}
+.feat h4{margin:0 0 6px;font-size:18px}
+.feat p{font-size:15.5px;color:var(--ink-strong)}
+@media (max-width:760px){.feat{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;border-left:4px solid var(--teal);background:#F2F8F7;border-radius:0 8px 8px 0;padding:26px 28px}
+.mono{width:64px;height:64px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:.02em}
+.about p{font-family:var(--serif);font-size:17.5px;color:var(--ink-cap);margin:0}
+@media (max-width:520px){.about{grid-template-columns:1fr}}
+
+/* corrections */
+.report{border:1px solid var(--rule);border-left:5px solid var(--scarlet);border-radius:8px;padding:26px;background:#fff}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 14px}
+@media (max-width:620px){.row3{grid-template-columns:1fr}}
+.hint{display:block;font-weight:400;font-size:13px;color:var(--ink-run);margin-top:2px}
+.sent{border-left:5px solid var(--cobalt);background:var(--tint2);border-radius:8px;padding:18px 20px;font-family:var(--serif);font-size:17px}
+
+/* using + footer */
+.use{font-family:var(--serif);font-size:17px;color:var(--ink-cap);background:var(--band);border-radius:8px;padding:22px 24px}
+footer{margin-top:80px;border-top:1px solid var(--rule);padding:30px 0 50px;font-size:14px;color:var(--ink-run)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:space-between}
+footer a{color:var(--ink-strong)}
+
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+.tier{border:1px solid var(--rule);border-radius:10px;padding:24px 24px 14px;background:#fff}
+.tier.t{border-color:#D6DEF3;background:var(--tint2)}
+.tier h3{font-family:var(--serif);font-size:22px;margin:4px 0 4px}
+.tier .who{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.tier.a .who{color:var(--teal)} .tier.t .who{color:var(--cobalt)}
+.tier ul{list-style:none;margin:12px 0 0;padding:0}
+.tier li{display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--rule);font-size:15.5px}
+.tier li svg{flex:0 0 18px;width:18px;height:18px;margin-top:3px;color:var(--cobalt)}
+.tier li small{display:block;color:var(--ink-run);font-size:13.5px}
+@media (max-width:760px){.tiers{grid-template-columns:1fr}}
+.formcard{border:1px solid #D6DEF3;border-radius:10px;padding:28px;background:#fff;box-shadow:0 20px 50px -30px rgba(20,40,110,.35)}
+.formcard h3{font-family:var(--serif);font-size:22px;margin:0 0 4px}
+.toc{columns:2;column-gap:36px;margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.toc li{break-inside:avoid;display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.toc b{font-family:var(--serif);color:var(--cobalt);width:26px;flex:0 0 auto;text-align:right}
+.toc span{color:var(--ink-run);font-size:13px;margin-left:auto;white-space:nowrap}
+@media (max-width:640px){.toc{columns:1}}
+.note-t{font-size:14px;color:var(--ink-strong);background:var(--tint);border-radius:6px;padding:10px 12px;margin:14px 0 0}
+
+/* moved banner + notice (site moved to bettermath.org, Sep 2026) */
+.moved{background:var(--tint);border-bottom:1px solid #D6DEF3}
+.moved .wrap{display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.moved p{margin:0;font-size:15.5px;color:var(--ink-cap);flex:1 1 420px}
+.moved a:not(.btn){font-weight:700}
+.movedcard{border:1px solid #D6DEF3;border-left:5px solid var(--cobalt);background:var(--tint2);border-radius:10px;padding:26px 28px}
+.movedcard ul{list-style:none;margin:14px 0 22px;padding:0;columns:2;column-gap:30px}
+.movedcard li{break-inside:avoid;display:flex;gap:10px;padding:7px 0;font-size:16px}
+.movedcard li svg{flex:0 0 18px;width:18px;height:18px;margin-top:4px;color:var(--cobalt)}
+@media (max-width:640px){.movedcard ul{columns:1}}
 </style>
 </head>
 <body>
-<main>
-  <div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#1A47B8"/><path d="M13 9.5 L20 16 L13 22.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>BetterMath</div>
-  <h1>BetterMath has moved</h1>
-  <p class="thanks">Thank you to every student and teacher who read these notes and took the time to send feedback. Thanks to you, the third edition is better in many ways: hundreds of corrections, clearer explanations, new challenge questions, a rebuilt answers booklet, and resources for teachers. It now has a home of its own.</p>
-  <p>The notes, the answers and the teacher resources now live at <a href="https://www.bettermath.org/"><strong>www.bettermath.org</strong></a>.</p>
-  <a class="go" href="https://www.bettermath.org/">Go to bettermath.org &rarr;</a>
-  <p class="small">You will be taken there in a few seconds. Please update your bookmarks.</p>
-  <p class="motto">today <b>&gt;</b> yesterday</p>
-  <p class="small" style="margin:0">Hasan Khan</p>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#1A47B8"/><path d="M13 9.5 L20 16 L13 22.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>BetterMath</a>
+  <nav aria-label="Sections">
+    <a href="#book">The book</a><a href="https://www.bettermath.org/resources/">Answers</a><a href="https://www.bettermath.org/resources/#unlock">For teachers</a><a href="#about">About</a><a href="https://www.bettermath.org/" style="color:var(--cobalt)">bettermath.org &rarr;</a>
+  </nav>
+  <span class="level">IB · AA · HL</span>
+</div></header>
+<div class="moved"><div class="wrap">
+  <p><b>BetterMath has moved to <a href="https://www.bettermath.org/">www.bettermath.org</a>.</b> The notes are still here to download; answers, single chapters, teacher resources and new material are at the new address.</p>
+  <a class="btn primary small" href="https://www.bettermath.org/">Go to bettermath.org &rarr;</a>
+</div></div>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="kicker">IB Diploma Programme</p>
+    <h1>Mathematics</h1>
+    <p class="sub">Analysis &amp; Approaches</p>
+    <span class="chip hl">Higher Level</span>
+    <p class="lede">Success in HL Math isn't about finding easy paths, but clear ones. Complete course notes, free to read and download.</p>
+    <div class="cta">
+      <a class="btn primary" href="pdf/bettermath-aa-hl.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download the notes</a>
+      <a class="btn ghost" href="https://www.bettermath.org/resources/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Answers &amp; teacher pack</a>
+    </div>
+    <p class="meta">Third edition · September 2026 · 668 pages · PDF, 2.6 MB</p>
+    <p class="motto"><span>today <b>&gt;</b> yesterday</span></p>
+  </div>
+  <div class="coverbox">
+    <img src="img/cover.jpg" width="720" height="1018" alt="Cover of BetterMath: Mathematics, Analysis &amp; Approaches, Higher Level. Third edition, September 2026.">
+    <span class="edition">3rd edition</span>
+  </div>
+</div></div>
+
+<div class="stats"><div class="wrap">
+  <div class="stat"><b>17</b><span>Chapters</span></div>
+  <div class="stat"><b>668</b><span>Pages</span></div>
+  <div class="stat"><b>83</b><span>Syllabus points</span></div>
+  <div class="stat"><b>Free</b><span>To download</span></div>
+</div></div>
+
+<section id="book"><div class="wrap">
+  <p class="eyebrow">The book</p>
+  <h2>Intuitive. Clear. Uncompromising.</h2>
+  <p class="intro">These notes skip shortcuts and artificial simplifications to focus on genuine clarity. Mastering AA HL takes dedication and practice; this book is here to support that effort, so you can give your whole attention to the mathematics.</p>
+  <div class="bookcard">
+    <div class="bm">
+      <span class="free">Free</span>
+      <div class="t">BetterMath — Mathematics: Analysis and Approaches HL</div>
+      <div class="d">All seventeen chapters: notes, worked examples and practice · 668 pages · PDF, 2.6 MB</div>
+    </div>
+    <a class="btn primary" href="pdf/bettermath-aa-hl.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download the notes</a>
+  </div>
+  <div class="feat" style="margin-top:28px">
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5"/></svg></span>
+      <h4>Notes that explain why</h4><p>Each chapter builds the topic in order, starting from the reason it exists. Formulas from the IB booklet are marked, and every idea comes with a fully worked example.</p></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+      <h4>Your Turn, every section</h4><p>A practice block closes each section, so you check an idea while it is fresh rather than at the end of the chapter.</p></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span>
+      <h4>Exam-style problems</h4><p>Chapters end with Paper 1 and Paper 2 style questions, then challenge investigations for anyone who wants to go further.</p></div>
+  </div>
+  <h3 style="font-family:var(--serif);font-size:22px;margin:40px 0 0">What's inside</h3>
+  <ul class="toc"><li><b>1</b>Exponents & Logarithms<span>Number & Algebra</span></li>
+<li><b>2</b>Sequences & Series<span>Number & Algebra</span></li>
+<li><b>3</b>Proofs<span>Number & Algebra</span></li>
+<li><b>4</b>Lines & Quadratics<span>Functions</span></li>
+<li><b>5</b>Functions & Graphs<span>Functions</span></li>
+<li><b>6</b>Polynomials<span>Functions</span></li>
+<li><b>7</b>Shapes & Measures<span>Geometry & Trigonometry</span></li>
+<li><b>8</b>Trigonometry<span>Geometry & Trigonometry</span></li>
+<li><b>9</b>Vectors<span>Geometry & Trigonometry</span></li>
+<li><b>10</b>Statistics<span>Statistics & Probability</span></li>
+<li><b>11</b>Probability<span>Statistics & Probability</span></li>
+<li><b>12</b>Probability Distributions<span>Statistics & Probability</span></li>
+<li><b>13</b>Limits & Derivatives<span>Calculus</span></li>
+<li><b>14</b>Derivative Applications<span>Calculus</span></li>
+<li><b>15</b>Integral Calculus<span>Calculus</span></li>
+<li><b>16</b>Differential Equations<span>Calculus</span></li>
+<li><b>17</b>Complex Numbers<span>Number & Algebra</span></li></ul>
+  <p class="fine" style="margin-top:14px">Higher Level content is marked throughout, so a Standard Level reader can see what to skip.</p>
+</div></section>
+
+<section id="resources"><div class="wrap">
+  <p class="eyebrow">Answers &amp; teacher resources</p>
+  <h2>Now at bettermath.org</h2>
+  <p class="intro">Thank you to every student and teacher who read these notes and took the time to send feedback. Thanks to you, the third edition is better in many ways, and BetterMath now has a home of its own. Everything beyond the notes lives there.</p>
+  <div class="movedcard">
+    <b style="font-family:var(--serif);font-size:20px">At www.bettermath.org</b>
+    <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Answers booklet for all 17 chapters</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Single chapters, one PDF each</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Markschemes, quizzes and slides for teachers</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Syllabus map</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Paper 3 and IA resources, as they are released</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Articles on the syllabus and on mathematics</span></li></ul>
+    <a class="btn primary" href="https://www.bettermath.org/resources/">Go to bettermath.org &rarr;</a>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap narrow" style="max-width:820px">
+  <p class="eyebrow" style="color:var(--teal)">About the author</p>
+  <h2>Hasan Khan</h2>
+  <div class="about">
+    <div class="mono" aria-hidden="true">HK</div>
+    <p>Hasan Khan has taught IB Mathematics AA HL for over ten years, is an IB examiner, and has worked as a national curriculum developer. He holds an M.Sc. in Particle Physics from the University of Jyväskylä, Finland, and a Postgraduate Diploma in Education, and has completed teacher training in educational innovation with CERN, ESA and Wolfram.</p>
+  </div>
+</div></section>
+
+<section id="corrections"><div class="wrap narrow" style="max-width:820px">
+  <p class="eyebrow" style="color:var(--scarlet)">Found a mistake?</p>
+  <h2>Tell me where it is</h2>
+  <p class="intro">Notes this size will contain errors, and the ones a reader finds are worth more than the ones I go looking for. If a line does not follow, an answer looks wrong, or a passage is hard to read, please say so and I will fix it in the next release.</p>
+  <form class="report" id="report-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+    <div class="row3">
+      <label>Chapter<input name="chapter" type="text" inputmode="numeric" placeholder="e.g. 14"></label>
+      <label>Page<input name="page" type="text" inputmode="numeric" placeholder="e.g. 351"></label>
+      <label>Where
+        <select name="where">
+          <option>Notes</option><option>Worked example</option><option>Your Turn practice</option>
+          <option>End-of-chapter problem</option><option>Challenge question</option><option>Answer</option><option>Somewhere else</option>
+        </select></label>
+    </div>
+    <label>What is wrong?<span class="hint">Quote the line if you can, and say what you think it should be.</span><textarea name="message" required></textarea></label>
+    <div class="row2">
+      <label>Your name <span class="opt">(optional)</span><span class="hint">Corrections are credited unless you would rather not be.</span><input name="name" type="text" autocomplete="name"></label>
+      <label>Your email <span class="opt">(optional)</span><span class="hint">Only so I can reply if I need to ask.</span><input name="email" type="email" autocomplete="email"></label>
+    </div>
+    <input type="hidden" name="_subject" value="BetterMath — correction">
+    <input type="hidden" name="form" value="correction">
+    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <button class="btn primary" type="submit">Send the correction</button>
+      <span class="fine" style="margin:0">or email <a href="mailto:ibxhasan@gmail.com?subject=BetterMath%20%E2%80%94%20correction">ibxhasan@gmail.com</a></span>
+    </div>
+  </form>
+  <div class="sent" id="report-sent" hidden>Thank you — that has been sent. If you left an email address I will reply if I need to ask anything.</div>
+</div></section>
+
+<section id="using"><div class="wrap narrow" style="max-width:820px">
+  <p class="eyebrow">Using these</p>
+  <div class="use">These notes are free to read and download for your own study. For anything else — printing sets for a class, sharing copies, posting them elsewhere, translating them, or any commercial use — please <a href="mailto:ibxhasan@gmail.com?subject=BetterMath%20%E2%80%94%20permission%20request">write to me first</a>. I usually say yes, and I like knowing where they end up.<br>&copy; 2026 Hasan Khan. All rights reserved.</div>
+</div></section>
 </main>
+<footer><div class="wrap">
+  <span>BetterMath · Hasan Khan · Third edition, September 2026 · &copy; 2026 all rights reserved</span>
+  <span>BetterMath now lives at <a href="https://www.bettermath.org/">www.bettermath.org</a>.</span>
+  <span>Not affiliated with or endorsed by the International Baccalaureate Organization.</span>
+</div></footer>
+
+<script>
+(function(){
+  var ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID", configured = ENDPOINT.indexOf('REPLACE_WITH_YOUR_FORM_ID') === -1;
+  var rf = document.getElementById('report-form'), sent = document.getElementById('report-sent');
+  if (rf) rf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(rf);
+    if (!configured){
+      var body = 'Chapter: ' + (d.get('chapter')||'-') + '\nPage: ' + (d.get('page')||'-') + '\nWhere: ' + (d.get('where')||'-')
+               + '\n\n' + (d.get('message')||'') + '\n\n— ' + (d.get('name')||'anonymous') + (d.get('email') ? ' <'+d.get('email')+'>' : '');
+      location.href = 'mailto:ibxhasan@gmail.com?subject=' + encodeURIComponent('BetterMath — correction') + '&body=' + encodeURIComponent(body);
+      return;
+    }
+    fetch(ENDPOINT, {method:'POST', body:new FormData(rf), headers:{Accept:'application/json'}})
+      .then(function(r){ if(!r.ok) throw 0; rf.hidden = true; sent.hidden = false; }, function(){ rf.submit(); });
+  });
+})();
+</script>
 </body>
 </html>
